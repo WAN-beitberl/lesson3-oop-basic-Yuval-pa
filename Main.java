@@ -10,5 +10,9 @@ public class Main{
 		shop.addOrder("tea");
 		shop.addOrder("hot cocoa");
 		shop.fulfillOrder();
+		String orderList[] = shop.listOrders();
+		if (orderList.length == 0){
+			System.out.println("the array is empty");
+		}
 	}
 }

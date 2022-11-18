@@ -46,5 +46,9 @@ public class CoffeShop{
 			System.out.println("The " + item + " is ready!");
 		}
 	}
+	// returns the list of order taken or an empty array if ther is non
+	public String[] listOrders(){
+		return this.orders.toArray();
+	}
 
 }
