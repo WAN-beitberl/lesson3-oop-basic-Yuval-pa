@@ -1,6 +1,6 @@
 package mypack;
 import java.util.*;
-import java.lang.*;
+import java.lang.*;	
 public class CoffeShop{
 	private String name;
 	private MenuItem menu[];
@@ -66,4 +66,19 @@ public class CoffeShop{
 		}
 		return (float)Math.round(sum*100.0f)/100.0f;
 	}
+	// returns the name of the cheapest item in the menu
+	public String cheapestItem(){
+		float min;
+		String name;
+		min=this.menu[0].getPrice();
+		name = this.menu[0].getItem();
+		for(int i = 1;i<this.menu.length;i++){
+			if(min>this.menu[i].getPrice()){
+				min = this.menu[i].getPrice();
+				name = this.menu[i].getItem();
+			}
+		}
+		return name;
+	}
 }
+	
