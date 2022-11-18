@@ -48,7 +48,10 @@ public class CoffeShop{
 	}
 	// returns the list of order taken or an empty array if ther is non
 	public String[] listOrders(){
-		return this.orders.toArray();
+		//converting to object array
+		Object[] arr = this.orders.toArray();
+		//converts the object to string
+		return Arrays.copyOf(arr, arr.length, String[].class);
 	}
 
 }
