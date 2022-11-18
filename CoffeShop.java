@@ -11,7 +11,6 @@ public class CoffeShop{
 		this.name=name;
 		this.menu=menu;
 		this.orders = new LinkedList<String>();
-		this.isOrdersEmpty =true;
 	}
 	public void addOrder(String itemName)
 	{
@@ -30,8 +29,7 @@ public class CoffeShop{
 			System.out.println("This item is currently unavailable!");
 		}
 		// addes the item to the menu
-		else{
-			isOrdersEmpty = false;
+		else{		
 			this.orders.addFirst(itemName);
 			System.out.println("Order added!");
 		}
@@ -53,5 +51,19 @@ public class CoffeShop{
 		//converts the object to string
 		return Arrays.copyOf(arr, arr.length, String[].class);
 	}
-
+	// returns the total price of all the orders
+	public float dueAmount(){
+		String list[] = listOrders();
+		int itemIndex;
+		float sum = 0f;
+		for(int i = 0; i<list.length;i++){
+			for(itemIndex = 0; itemIndex < this.menu.length; itemIndex++){
+				if(list[i].equals(this.menu[itemIndex].getItem())){
+					break;
+				}
+			}
+			sum += this.menu[itemIndex].getPrice();
+		}
+		return (float)Math.round(sum*100.0f)/100.0f;
+	}
 }
