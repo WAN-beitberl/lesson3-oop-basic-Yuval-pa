@@ -20,5 +20,13 @@ public class Main{
 			System.out.println("the array is empty");
 		}
 		System.out.println("the cheapest item in the menu is "+ shop.cheapestItem());
+		ArrayList<String> drinks = shop.drinksOnly();
+		for(int i=0; i<drinks.size();i++){
+			System.out.println(drinks.get(i));
+		}
+		ArrayList<String> foods = shop.foodOnly();
+		for(int i=0; i<foods.size();i++){
+			System.out.println(foods.get(i));
+		}
 	}
 }

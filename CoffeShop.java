@@ -80,5 +80,25 @@ public class CoffeShop{
 		}
 		return name;
 	}
+	// returns only the names of the drinks in the menu
+	public ArrayList<String> drinksOnly(){
+		ArrayList<String> drinks =  new ArrayList<String>();
+		for(int i=0;i<this.menu.length;i++){
+			if((this.menu[i].getType()).equals("drink")){
+				drinks.add(this.menu[i].getItem());
+			}
+		}
+		return drinks;
+	}
+	// returns only the names of the food in the menu
+	public ArrayList<String> foodOnly(){
+		ArrayList<String> food =  new ArrayList<String>();
+		for(int i=0;i<this.menu.length;i++){
+			if((this.menu[i].getType()).equals("food")){
+				food.add(this.menu[i].getItem());
+			}
+		}
+		return food;
+	}
 }
 	
